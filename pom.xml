@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath />
+    </parent>
+
+    <groupId>com.example.media.streaming</groupId>
+    <artifactId>media-streaming-ai-starter</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>media-streaming-ai-starter</name>
+    <packaging>pom</packaging>
+    <description>Media with AI Sample</description>
+
+    <modules>
+        <module>agora-streaming-server</module>
+        <module>ai-biz-proxy</module>
+    </modules>
+
+    <properties>
+        <protoc.version>3.10.0</protoc.version>
+        <grpc.version>1.25.0</grpc.version>
+        <protobuf-java-format.version>1.4</protobuf-java-format.version>
+        <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <pgv-java.version>0.2.0</pgv-java.version>
+        <guice.version>4.2.2</guice.version>
+
+        <grpc-starter.verson>3.4.1</grpc-starter.verson>
+        <srping-boot-autoconfigure-version>2.2.1.RELEASE</srping-boot-autoconfigure-version>
+        <grpc-spring-boot-starter>2.4.0.RELEASE</grpc-spring-boot-starter>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>protobuf-java</artifactId>
+                <groupId>com.google.protobuf</groupId>
+                <version>${protoc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-core</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.googlecode.protobuf-java-format</groupId>
+                <artifactId>protobuf-java-format</artifactId>
+                <version>${protobuf-java-format.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-client-spring-boot-starter</artifactId>
+                <version>${grpc-spring-boot-starter}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.devh</groupId>
+                <artifactId>grpc-server-spring-boot-starter</artifactId>
+                <version>${grpc-spring-boot-starter}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${srping-boot-autoconfigure-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

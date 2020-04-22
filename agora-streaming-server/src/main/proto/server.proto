@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.agora.media.streaming.rpc.service";
+option java_outer_classname = "ServerProto";
+
+import "server-entity.proto";
+
+package server;
+
+service HelloService {
+    rpc sayHelloWorld(StringRequest) returns (StringResponse);
+    rpc createChannel(StringRequest) returns (StringResponse);
+    rpc destroyChannel(StringRequest) returns (StringResponse);
+    rpc startStreaming(StringRequest) returns (StringResponse);
+    rpc stopStreaming(StringRequest) returns (StringResponse);
+}
