@@ -14,6 +14,10 @@ public interface IMediaStreamingServer {
 
     public int getStreamingUrlLength();
 
+    public int playNextStreamingUrl();
+
+    public int clearStreamingUrl();
+
     public int startStreaming();
 
     public int pauseStreaming();

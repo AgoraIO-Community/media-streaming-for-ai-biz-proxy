@@ -99,22 +99,37 @@ public class MediaStreamingServer implements IMediaStreamingServer {
         return nativeGetStreamingUrlLength(mNativeHandle);
     }
 
+    @Override
+    public int playNextStreamingUrl() {
+        return nativePlayNextStreamingUrl(mNativeHandle);
+    }
+
+    @Override
+    public int clearStreamingUrl() {
+        return nativeClearStreamingUrl(mNativeHandle);
+    }
+
+    @Override
     public int startStreaming() {
         return nativeStartStreaming(mNativeHandle);
     }
 
+    @Override
     public int pauseStreaming() {
         return nativePauseStreaming(mNativeHandle);
     }
 
+    @Override
     public int resumeStreaming() {
         return nativeResumeStreaming(mNativeHandle);
     }
 
+    @Override
     public int stopStreaming() {
         return nativeStopStreaming(mNativeHandle);
     }
 
+    @Override
     public int sendVideoMetadataByFrameIndex(long frmIdx, byte[] data) {
         if (data == null || data.length == 0 || frmIdx <= 0) {
             return 0;
@@ -126,6 +141,7 @@ public class MediaStreamingServer implements IMediaStreamingServer {
         return nativeSendMediaMetadataWithFrameIdx(mNativeHandle, frmIdx, buffer);
     }
 
+    @Override
     public int sendVideoMetadataByTimeStamp(long ts, byte[] data) {
         if (data == null || data.length == 0 || ts <= 0) {
             return 0;
@@ -137,22 +153,27 @@ public class MediaStreamingServer implements IMediaStreamingServer {
         return nativeSendMediaMetadataWithTimestamp(mNativeHandle, ts, buffer);
     }
 
+    @Override
     public int seekStreamingPosition(int position) {
         return nativeSeekStreamingPosition(mNativeHandle, position);
     }
 
+    @Override
     public int getStreamingPosition() {
         return nativeGetStreamingPosition(mNativeHandle);
     }
 
+    @Override
     public int getDuration() {
         return nativeGetDuration(mNativeHandle);
     }
 
+    @Override
     public int leaveChannel() {
         return nativeLeaveChannel(mNativeHandle);
     }
 
+    @Override
     public int release() {
         int retVal;
         synchronized (SYNC_LOCK) {
@@ -176,6 +197,10 @@ public class MediaStreamingServer implements IMediaStreamingServer {
     private native int nativeRemoveStreamingUrl(long object, String file);
 
     private native int nativeGetStreamingUrlLength(long object);
+
+    private native int nativePlayNextStreamingUrl(long object);
+
+    private native int nativeClearStreamingUrl(long object);
 
     private native int nativeStartStreaming(long object);
 

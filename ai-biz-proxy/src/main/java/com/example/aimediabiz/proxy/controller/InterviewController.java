@@ -33,7 +33,7 @@ public class InterviewController {
     @RequestMapping(value = "/create-channel/", method = RequestMethod.POST)
     @ApiOperation(value = "Create channel", notes = "Create channel and prepare for streaming")
     public JSONObject createChannel(@RequestParam String appId, @RequestParam Long uid, @RequestParam String cname,
-            @RequestParam String token) throws Exception {
+            @RequestParam(required = false) String token) throws Exception {
         logger.info("Create channel, appId = " + appId + " uid = " + uid + ", cname = " + cname + " token = " + token);
         String existCname = (String) interviewCache.getIfPresent("cname");
         if (StringUtils.isEmpty(existCname)) {
