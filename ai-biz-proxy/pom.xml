@@ -21,7 +21,7 @@
         <java.version>1.8</java.version>
 
         <protoc.version>3.10.0</protoc.version>
-        <grpc.version>1.25.0</grpc.version>
+        <grpc.version>1.53.0</grpc.version>
         <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
 
         <grpc-starter.verson>3.4.1</grpc-starter.verson>
